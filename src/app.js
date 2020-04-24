@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast')
 
 // init express
 const app = express()
+const port = process.env.PORT || 3000
 
 //Defined Paths for Express
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -98,25 +99,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () =>{
-    console.log('Serder is runing')
+app.listen(port, () =>{
+    console.log('Server is up ' + port)
 })
-
-// console.log(__dirname)
-// console.log(path.join(__dirname, '../public'))
-
-// app.get('/help', (req, res) => {
-//     res.send([{
-//         name: 'javier',
-//         age: 34
-//     },
-//     {
-//         name: 'dana',
-//         age: 35
-//     }
-// ])
-// })
-
-// app.get('/about', (req, res) => {
-//     res.send('<h1>About</h1>')
-// })

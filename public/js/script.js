@@ -1,11 +1,5 @@
 console.log('Script.js is Running')
 
-// fetch('http://puzzle.mead.io/puzzle').then( response => {
-//     response.json().then( data => {
-//         console.log(data)
-//     })
-// })
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input')
 const messageOne = document.getElementById('message-1')
@@ -21,7 +15,7 @@ weatherForm.addEventListener('submit', (e) => {
     if(!location){
         return messageOne.textContent = 'No location provited'
     }
-    fetch('http://localhost:3000/weather?address=' + location).then( response => {
+    fetch('/weather?address=' + location).then( response => {
         response.json().then( ({ error, forecast, location }) => {
 
             if ( error ) {
